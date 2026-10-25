@@ -19,7 +19,7 @@ def get_orders(db: Session = Depends(get_db)):
 
 @router.get("/orders/{order_id}")
 def get_orders(order_id: int, db:Session = Depends(get_db)):
-    order = db.query(Order).filter(order.order_id == order_id).first()
+    order = db.query(Order).filter(Order.order_id == order_id).first()
     if order is None:
         raise HTTPException(status_code=404, detail="Order not found")
     return order

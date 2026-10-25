@@ -28,7 +28,7 @@ def get_parts(part_id: int, db: Session = Depends(get_db)):
 @router.post("/parts")
 def create_part(part: PartCreate, db: Session = Depends(get_db)):  # Pydantic validates incoming JSON first
     new_part = Part( # creates a new SQLAlchemy object from the validated data
-        name=part.material,
+        name=part.name,
         quantity=part.quantity,
         price=part.price)
     db.add(new_part)  # stages it for insertion
