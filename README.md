@@ -67,7 +67,14 @@ cd manufacturing-api
 pip install -r requirements.txt
 ```
 
-**3. Run the server**
+**3. Configure environment variables**
+
+Create a `.env` file in the project root:
+```
+DATABASE_URL=sqlite:///./manufacturing.db
+```
+
+**4. Run the server**
 ```bash
 uvicorn main:app --reload
 ```
