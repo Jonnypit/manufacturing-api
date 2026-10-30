@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Float
+from sqlalchemy import Column, Integer, String, Float 
 from database import Base
 
 class Part(Base):
@@ -27,4 +27,9 @@ class Employee(Base):
     role         = Column(String)
     department   = Column(String)
     hire_date    = Column(String)
-
+    
+class APIKey(Base):
+    __tablename__ = "api_keys"
+    id              = Column(Integer, primary_key=True)
+    name            = Column(String)
+    encrypted_key   = Column(String)
